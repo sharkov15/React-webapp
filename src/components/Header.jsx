@@ -1,37 +1,23 @@
 import logo from './../assets/img/zabbix.svg'
-
-const menu = [
-    {
-        title: 'Products',
-        link: '/'
-    },
-    {
-        title: 'Project',
-        link: '/'
-    },
-    {
-        title: 'More',
-        link: '/'
-    }
-]
+import styles from './Header.module.scss'
 
 const Header = () => {
     return( 
-        <div>
-            <div className="logo">
-                <img src={logo} alt="" />
+        <div className={styles.header}>
+            <div className={styles.logo}>
+                <img src={logo} alt="" height='35'/>
             </div>
 
-            <div className='menu-wrapper'>
-                <ul>
-                    {menu.map((item, idx) => (
-                        <li key={`menu item ${idx}`}><a href={item.link}>{item.title}</a></li>
-                    ))}
+            <div className={styles.wrapper}>
+                <ul className={styles.menu}>
+                    <li><a href='/'>Product</a></li>
+                    <li><a href='/'>Shop</a></li>
+                    <li><a href='/'>More</a></li>
                 </ul>
             </div>
-            <div className='auth-buttons'>
-                <button className='login'>Login</button>
-                <button className='sign-up'>Sign up</button>
+            <div className={styles.buttons}>
+                <button className={styles['login-button']}>Login</button>
+                <button className={styles['sing-button']}>Sign up</button>
             </div>
         </div> 
     );
